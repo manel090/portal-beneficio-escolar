@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadastro | Apoio Brasil</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head><body>
+<header class="topo"><div class="container cabecalho"><a class="logo" href="/">Apoio<span>Brasil</span></a><span class="identificacao">CADASTRO DO PEDIDO</span></div></header>
+<main class="container"><section class="formulario">
+<span class="etiqueta">ETAPA 1 DE 2</span><h1>Seus dados</h1>
+<p>Preencha os campos abaixo. O pagamento será apresentado somente depois desta etapa.</p>
+{% if erro %}<div class="erro" role="alert">{{ erro }}</div>{% endif %}
+<form action="{{ url_for('inscricao') }}" method="POST">
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+<label for="nome">Nome completo</label><input id="nome" name="nome" type="text" maxlength="120" autocomplete="name" placeholder="Digite seu nome completo" required>
+<label for="email">E-mail</label><input id="email" name="email" type="email" maxlength="160" autocomplete="email" placeholder="voce@exemplo.com" required>
+<label for="cidade">Cidade (opcional)</label><input id="cidade" name="cidade" type="text" maxlength="100" autocomplete="address-level2" placeholder="Sua cidade">
+<label for="estado">Estado (opcional)</label><select id="estado" name="estado">
+<option value="">Selecione</option>
+<option value="AC">Acre</option><option value="AL">Alagoas</option><option value="AP">Amapá</option><option value="AM">Amazonas</option><option value="BA">Bahia</option><option value="CE">Ceará</option><option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option><option value="GO">Goiás</option><option value="MA">Maranhão</option><option value="MT">Mato Grosso</option><option value="MS">Mato Grosso do Sul</option><option value="MG">Minas Gerais</option><option value="PA">Pará</option><option value="PB">Paraíba</option><option value="PR">Paraná</option><option value="PE">Pernambuco</option><option value="PI">Piauí</option><option value="RJ">Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option><option value="RS">Rio Grande do Sul</option><option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="SC">Santa Catarina</option><option value="SP">São Paulo</option><option value="SE">Sergipe</option><option value="TO">Tocantins</option>
+</select>
+<label class="consentimento"><input type="checkbox" name="consentimento" required> Li e concordo com a <a href="{{ url_for('privacidade') }}" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o uso dos dados informados para processar este pedido.</label>
+<p class="aviso">Não solicitamos CPF nesta etapa porque ele não é necessário para adquirir o material de orientação. Nunca informe senha, código de acesso ou dados bancários.</p>
+<button type="submit" class="botao botao-full">Continuar para pagamento</button>
+</form>
+<a href="/" class="voltar">Voltar ao início</a>
+</section></main>
+<footer><div class="container footer-inner"><span>Apoio Brasil — serviço particular.</span><nav><a href="{{ url_for('termos') }}">Termos</a><a href="{{ url_for('privacidade') }}">Privacidade</a><a href="{{ url_for('reembolso') }}">Reembolso</a></nav></div></footer>
+</body></html>

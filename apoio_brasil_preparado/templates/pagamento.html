@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagamento | Apoio Brasil</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head><body>
+<header class="topo"><div class="container cabecalho"><a class="logo" href="/">Apoio<span>Brasil</span></a><span class="identificacao">ETAPA FINAL</span></div></header>
+<main class="container"><section class="formulario pagamento">
+<span class="etiqueta">ETAPA 2 DE 2</span><h1>Cadastro recebido</h1>
+<p>Obrigado, {{ nome }}. Seus dados foram registrados para este pedido.</p>
+<div class="resumo"><span>Serviço</span><strong>Material particular de orientação sobre programas sociais</strong><span>Valor total</span><strong class="preco-final">R$ {{ preco }}</strong><span>E-mail informado</span><strong>{{ email }}</strong></div>
+<h2>Escolha como deseja pagar</h2>
+<p>As opções de pagamento serão ativadas depois que a integração com a Beehive estiver configurada e aprovada.</p>
+<div class="metodos">
+  <div class="metodo indisponivel"><b>Pix</b><span>Em configuração</span></div>
+  <div class="metodo indisponivel"><b>Cartão de crédito</b><span>Em configuração</span></div>
+</div>
+<div class="aviso">Nenhuma cobrança foi realizada nesta etapa. Não faça transferência para chaves ou contas enviadas por mensagens. Aguarde a ativação do pagamento dentro deste site.</div>
+<p class="micro">O acesso ao material será liberado somente após confirmação do pagamento pela operadora. A contratação não garante aprovação ou concessão de benefício público.</p>
+<a href="/" class="voltar">Voltar para a página inicial</a>
+</section></main>
+<footer><div class="container footer-inner"><span>Apoio Brasil — serviço particular.</span><nav><a href="{{ url_for('termos') }}">Termos</a><a href="{{ url_for('privacidade') }}">Privacidade</a><a href="{{ url_for('reembolso') }}">Reembolso</a></nav></div></footer>
+</body></html>

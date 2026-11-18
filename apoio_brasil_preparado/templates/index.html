@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Orientação particular para entender programas sociais e consultar os canais oficiais.">
+  <title>Apoio Brasil | Orientação sobre programas sociais</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topo"><div class="container cabecalho">
+  <a class="logo" href="/">Apoio<span>Brasil</span></a>
+  <span class="identificacao">SERVIÇO PARTICULAR DE ORIENTAÇÃO</span>
+</div></header>
+<main class="container">
+  <section class="hero">
+    <div class="hero-text">
+      <span class="etiqueta">INFORMAÇÃO E ORIENTAÇÃO</span>
+      <h1>Entenda os programas sociais e saiba por onde começar.</h1>
+      <p>Receba um material explicativo com orientações para consultar programas sociais, conhecer critérios gerais e encontrar os canais oficiais de atendimento.</p>
+      <div class="preco"><small>Valor único pelo material de orientação</small><strong>R$ 49,90</strong><span>Pagamento somente depois do preenchimento dos dados.</span></div>
+      <a href="{{ url_for('inscricao') }}" class="botao">Continuar para o cadastro</a>
+      <p class="micro">A contratação é opcional. Leia os termos e a política de privacidade antes de continuar.</p>
+    </div>
+    <aside class="painel">
+      <div class="selo">✓</div>
+      <h2>O que você recebe</h2>
+      <ul class="checklist">
+        <li>Explicação de programas sociais conhecidos</li>
+        <li>Resumo de critérios gerais de acesso</li>
+        <li>Lista orientativa de documentos que podem ser solicitados</li>
+        <li>Passo a passo para consultar os canais oficiais</li>
+        <li>Links para fontes e serviços públicos oficiais</li>
+      </ul>
+      <div class="nota">O conteúdo é informativo e não substitui a análise dos órgãos responsáveis.</div>
+    </aside>
+  </section>
+  <section class="faixa">
+    <h2>Como funciona</h2>
+    <div class="passos">
+      <div><b>01</b><h3>Preencha seus dados</h3><p>Informe apenas os dados necessários para o cadastro do pedido.</p></div>
+      <div><b>02</b><h3>Confira a contratação</h3><p>Na etapa seguinte você verá o valor e as formas de pagamento disponíveis.</p></div>
+      <div><b>03</b><h3>Receba a orientação</h3><p>Após a confirmação do pagamento, o material contratado será disponibilizado conforme as condições informadas.</p></div>
+    </div>
+  </section>
+  <section class="disclaimer">
+    <strong>Importante: serviço particular e independente.</strong>
+    <p>O Apoio Brasil não é órgão público, não representa o Governo Federal, estados ou municípios e não realiza inscrição, aprovação ou liberação de benefícios. O pagamento é exclusivamente pelo serviço privado de orientação. Consultas e solicitações de benefícios nos canais públicos oficiais podem ser gratuitas. Não há garantia de elegibilidade, aprovação ou recebimento de valores.</p>
+  </section>
+</main>
+<footer><div class="container footer-inner">
+  <span>© Apoio Brasil — Serviço particular de orientação.</span>
+  <nav><a href="{{ url_for('termos') }}">Termos de uso</a><a href="{{ url_for('privacidade') }}">Privacidade</a><a href="{{ url_for('reembolso') }}">Reembolso</a></nav>
+</div></footer>
+</body></html>
